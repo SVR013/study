@@ -20,7 +20,7 @@ def DrawTreeWindows(path, template=''):
             DrawTreeWindows(path + '\\' + i, (template + (('    ') if flag else '│   ')))
 
 def Run() -> str:
-    # выводит меню пользователю
+    '''Выводит меню пользователю'''
     commands = ['1', '2', '0']
     print('Какая у вас операционная система? (укажите номер)\n',
           '1. Linux\n', '2.Windows\n',
