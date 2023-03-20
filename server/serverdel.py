@@ -8,7 +8,7 @@ server.bind((LOCALHOST, PORT))
 
 print('Сервер запущен!')
 
-slovar = {}
+slovar = dict()
 
 class ClientThread(threading.Thread):
     '''Создаем поток для клиента'''
@@ -33,7 +33,6 @@ class ClientThread(threading.Thread):
                     with open('dela.json', 'w', encoding='UTF-8') as file:
                         json.dump(slovar, file, indent=4, ensure_ascii=True, sort_keys=True)
                     print("Отключение", clinetaddress)
-                    slovar.clear()
                     break
                 case 'SendName': #Здесь происходит авторизация клиента
                     data = self.csocket.recv(4096)
