@@ -30,7 +30,7 @@ class ClientThread(threading.Thread):
             self.csocket.send(bytes('1', 'UTF-8'))
             match msg: #Получение команд с клиента
                 case 'exit' | '':
-                    value2 = slovar[login] #Записываем изменения
+                    value2 = self.slovar[login] #Записываем изменения
                     self.theend(login, value2)
                     break
                 case 'SendName': #Здесь происходит авторизация клиента
@@ -54,7 +54,7 @@ class ClientThread(threading.Thread):
                     self.addvalue(login)
                     self.getlist(login)
                 case 'ClearList':
-                    slovar[login] = []
+                    self.slovar[login] = []
                 case _: #wildcard
                     continue
 
@@ -71,13 +71,13 @@ class ClientThread(threading.Thread):
         '''Функция добавления дела в список'''
         data = self.csocket.recv(4096)
         values = data.decode('UTF-8')
-        print(slovar)
-        slovar[login].append(values)
+        print(self.slovar)
+        self.slovar[login].append(values)
 
 
     def getlist(self, login: str):
         '''Функция отправки списка клиенту'''
-        output = list(slovar.get(login))
+        output = list(self.slovar.get(login))
         self.csocket.send(bytes(f'{output}', 'UTF-8'))
 
 if __name__ == "__main__":
