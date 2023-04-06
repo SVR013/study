@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@1,300&display=swap');
+
+html, body {
+    font-family: 'Overpass', sans-serif;
+    color: #d1d1d1;
+    margin: 0;
+    padding 0;
+    height: 100%;
+    width: 100%;
+    background: #1f1f1e;
+}
+
+h1 {
+    color: #d1d1d1;
+    position: relative;
+    font-family: 'Overpass', sans-serif;
+    text-align: center
+
+}
+
+h3 {
+    color: #d1d1d1;
+    position: relative;
+    font-family: 'Overpass', sans-serif;
+    font-size: 25px;
+    text-align: center
+}
+
+ul.text {
+    color: #d1d1d1;
+    position: relative;
+    font-family: 'Overpass', sans-serif;
+    font-size: 18px;
+    text-align: center
+
+}
+
+TextArea {
+  width: 20%;
+  resize: vertical;
+  padding:15px;
+  border-radius:15px;
+  border:0;
+  box-shadow:4px 4px 10px rgba(0,0,0,0.0);
+  height:100px;
+}
+
+input[type=text] {
+  background: #e3e3e3;
+  font-family: 'Overpass', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  color: #FDA83D;
+  width: 250px;
+  border:0;
+  border-radius:15px;
+
+}
+
+button {
+    background: rgba(0,0,0,0);
+	color: #FDA83D;
+	font-family: 'Overpass', sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    border:0;
+    width: 170px;
+    border-radius:15px;
+    box-shadow:0 0 0 2px #FDA83D
+
+}
+
+button:hover {
+  background: #b8362c;
+  font-family: 'Overpass', sans-serif;
+  box-shadow:0 0 0 2px #FDA83D
+}
+
+input[type=submit] {
+  background: #FDA83D;
+  font-family: 'Overpass', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  border:0;
+  width: 170px;
+  border-radius:15px;
+
+}
+
+input[type=submit]:hover {
+	background: rgba(0,0,0,0);
+	color: #FDA83D;
+	box-shadow:0 0 0 2px #FDA83D;
+}
+
+input[type=password] {
+  background: #e3e3e3;
+  font-family: 'Overpass', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  color: #FDA83D;
+  width: 250px;
+  border:0;
+  border-radius:15px;
+}
+
+a {
+    color: #FDA83D;
+    text-decoration: none;
+}
+
+p {
+
+    color: #d1d1d1;
+    font-size: 18px;
+    text-align: center
+}
+
+
+a:hover {
+    color: #ed7037;
+    text-decoration: underline;
+}
+
+
+
+.clear {clear: both;}
+
+ul.mainmenu {
+    list-style: none;
+    background: #1f1f1e;
+    height: 60px;
+
+    margin: auto;
+    padding: 0;
+    color: #f2f2f2;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+ul.mainmenu li {
+    float: right;
+    margin: 25px 20px 0 60px;
+}
+
+ul.mainmenu li.last {float: left;}
+
+ul.mainmenu li a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+ul.mainmenu li a:hover {
+    color: #f2f2f2;
+    display: inline;
+    border-bottom: 2px solid #FDA83D;
+}
+
+div.content {
+    margin: 10px;
+}
+
+.form-contact label {
+    display: inline-block;
+    min-width: 80px;
+}
+
+.form-contact p {margin: 10px 0 10px 0;}
+.form-contact input[type=submit], texture {
+    font-size: 16px;
+}
+
+.flash.success {
+    max-width: 1010px;
+    margin: auto;
+    font-family: 'Overpass', sans-serif;
+    padding: 10px;
+	border: 2px solid #1b730f;
+	background: #1b730f;
+	width: 400px;
+    border-radius:15px;
+    text-align: center
+}
+.flash.error {
+    max-width: 1010px;
+    margin: auto;
+    font-family: 'Overpass', sans-serif;
+    padding: 10px;
+	border: 2px solid #b8362c;
+	background: #b8362c;
+	width: 400px;
+    border-radius:15px;
+    text-align: center
+}
+
+ul.list-posts {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-width: 600px;
+
+}
+ul.list-posts li {
+	margin: 20px 0 0 0;
+	border: 1px solid #eee;
+}
+ul.list-posts .title {
+	margin: 0;
+	padding: 0px;
+	background: #eee;
+}
+ul.list-posts .annonce {
+	margin: 0;
+	padding: 10px 5px 10px 5px;
+
+}
+
+.profile-ava {
+	width: 130px;
+	text-align: center;
+	overflow: hidden;
+	background: #eee;
+	padding: 10px;
+}
+.profile-ava img {max-width: 150px; height: auto;}
+
+.profile-load {
+	margin-top: 10px;
+	overflow: hidden;
+	max-width: 150px;
+}
+.profile-load input[type=submit], input[type=file] {
+	width: 100%;
+	font-size: 18px;
+}
+.profile-load p {
+	padding: 0;
+	margin: 5px 0 0 0;
+}
+
+.profile-panel {padding: 0 0 0 10px;}
+ul.profile-info {
+	list-style: none;
+	margin: 10px 0 0 0;
+	padding: 0;
+	color: #7E652F;
+}
+ul.profile-info li {margin-top: 10px;}
+
+}

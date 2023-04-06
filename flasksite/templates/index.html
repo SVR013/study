@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<hr2>
+    <ul class="list-post">
+        {% for p in posts %}
+        <li>
+            <h3 class="title"><a href="{{ url_for('createUpdate', id_post=p.id)}}">{{p.title}}</a></h3>
+            <p class="anonce">{{ p.comment }}</p>
+            <br>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
