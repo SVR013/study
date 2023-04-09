@@ -14,6 +14,13 @@ app.config.update(dict(DATABASE=os.path.join(app.root_path, 'newapp.db')))
 
 # ----------------------Работа-с-базой-данных---------------------------------------
 
+dbase = None
+@app.before_request
+def before_request():
+    global dbase
+    db = get_db()
+    dbase = FDataBase(db)
+
 
 def connect_db():
     conn = sqlite3.connect(app.config['DATABASE'])
@@ -38,15 +45,6 @@ def get_db():
 
 
 
-@app.route('/index')
-def index():
-    '''Обработчик главной страница'''
-    db = get_db()
-    dbase = FDataBase(db)
-    return render_template('index.html', menu=dbase.getMenu(),
-                           posts=dbase.getPostAnonce(), username=session['userLogger'])
-
-
 @app.teardown_appcontext
 def close_db(error):
     if hasattr(g, 'link_db'):
@@ -55,6 +53,11 @@ def close_db(error):
 
 # ----------------------Обработчики-страниц---------------------------------------
 
+@app.route('/index')
+def index():
+    '''Обработчик главной страница'''
+    return render_template('index.html', menu=dbase.getMenu(),
+                           posts=dbase.getPostAnonce(), username=session['userLogger'])
 
 @app.route("/")
 def test():
@@ -90,8 +93,6 @@ def profile(username):
 @app.route('/create', methods=['POST', 'GET'])
 def create():
     """Обработчик страницы с добавлением нового дела в список"""
-    db = get_db()
-    dbase = FDataBase(db)
     if request.method == 'POST':
         if len(request.form["case_name"]) > 2:
             res = dbase.addPost(request.form["case_name"], request.form["case_comment"])
@@ -110,8 +111,6 @@ def create():
 def page_not_found(error):
     """ Обработчик страницы с заглушкой при ошибке 404"""
     print(error)
-    db = get_db()
-    dbase = FDataBase(db)
     return render_template('page404.html', title="Cтраница не найдена",
                            menu=dbase.getMenu(), username=session['userLogger']), 404
 
@@ -124,8 +123,6 @@ def page_not(error):
 @app.route('/update/<int:id_post>', methods=['POST', 'GET'])
 def createUpdate(id_post):
     """Обработчик страницы с добавлением нового дела в список"""
-    db = get_db()
-    dbase = FDataBase(db)
     for i, j in dbase.getPost(id_post):
         title = i
         comment = j
@@ -153,11 +150,9 @@ def createUpdate(id_post):
 @app.route('/delete/<int:id_post>')
 def delete(id_post):
     """Обработчик страницы с удалением дела"""
-    db = get_db()
-    dbase = FDataBase(db)
     res = dbase.deletePost(id_post)
     if not res:
-        print('Дело не удалено!')
+        print('Дело удалено')
     return render_template("delete.html",
                            menu=dbase.getMenu(), id_post=id_post,
                            username=session['userLogger'])
