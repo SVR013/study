@@ -1,0 +1,16 @@
+1686226531546	geckodriver	INFO	Listening on 127.0.0.1:61839
+1686226534620	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61840" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\svr01\\AppData\\Local\\Temp\\rust_mozprofileQIcg46"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1686226535066	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1686226535073	Marionette	INFO	Listening on port 61852
+WebDriver BiDi listening on ws://127.0.0.1:61840
+Read port: 61852
+1686226535228	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:61840/devtools/browser/2ad5dff6-8e05-45f9-8d38-13229c40da24
+JavaScript warning: https://cdn.stepik.net/static/frontend-build/vendor.js?v=1685987900, line 6289: unreachable code after return statement
+JavaScript error: https://cdn.stepik.net/static/frontend-build/vendor.js?v=1685987900, line 6105: Error: Expected: '<assignment:568645>' to be present in the adapter provided payload, but it was not found.
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 14: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1686226556734	Marionette	INFO	Stopped listening on port 61852
+Dynamically enable window occlusion 1
